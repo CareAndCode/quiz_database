@@ -23,6 +23,12 @@ body {
   padding: 1%;
 }
 
+.end-container {
+  height: auto;
+  min-height: 30rem;
+  max-height: none;
+}
+
 /* Gradient overlay to text created following www.fossheim.io/writing/posts/css-text-gradient/ */
 #game-heading {
   font-family: "Rubik Mono One", sans-serif;
@@ -213,6 +219,11 @@ body {
   #game-container {
     max-height: 34rem;
   }
+}
+
+#game-container.end-container {
+  height: auto;
+  max-height: none;
 }
 
 /* end.html CSS ---------------------------------------------------- */
