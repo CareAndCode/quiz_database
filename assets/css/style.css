@@ -8,11 +8,12 @@
 }
 
 body {
-  color: bisque;
+  background-color: bisque;
+  min-height: 100vh;
 }
 
 #game-container {
-  background-color: rgb(49, 52, 90) !important;
+  background-color: rgb(55, 69, 85) !important;
   width: 80%;
   height: 80rem;
   max-height: 30rem;
@@ -27,9 +28,9 @@ body {
   font-size: 2.5rem;
   background-image: linear-gradient(
     45deg,
-    rgb(219, 125, 47) 0%,
-    rgb(161, 15, 15) 0%,
-    rgb(249, 213, 0) 100%
+    rgb(255, 214, 165) 0%,
+    rgb(255, 173, 173) 50%,
+    rgb(202, 255, 191) 100%
   );
   background-size: 100%;
   background-clip: text;
@@ -64,7 +65,7 @@ body {
 .button:hover {
   cursor: pointer;
   transition: transform 150ms;
-  box-shadow: 0 0.4rem 1.4rem 0 rgba(161, 15, 15, 1);
+  box-shadow: 0 0.4rem 1.4rem 0 rgba(212, 145, 157, 0.65);
   transform: scale(1.03);
 }
 
@@ -83,7 +84,7 @@ body {
 }
 
 #highscore-btn:hover {
-  box-shadow: 0 0.4rem 1.4rem 0 rgba(161, 15, 15, 1);
+  box-shadow: 0 0.4rem 1.4rem 0 rgba(212, 145, 157, 0.65);
 }
 
 .fas {
@@ -151,7 +152,7 @@ body {
 
 .choice-container:hover {
   cursor: pointer;
-  box-shadow: 0 0.4rem 1.4rem 0 rgba(161, 15, 15, 1);
+  box-shadow: 0 0.4rem 1.4rem 0 rgba(212, 145, 157, 0.65);
   transform: scale(1.02);
   transition: transform 100ms;
 }
