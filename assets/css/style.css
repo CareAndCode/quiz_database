@@ -2,20 +2,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap");
 
 * {
-  margin: 0;
-  padding: 0;
+
   box-sizing: border-box;
   font-family: "Merriweather", sans-serif;
 }
 
 body {
-  background: url(../images/movieMaestroBackground.webp) no-repeat center center
-    fixed;
-  background-size: cover;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  color: rgb(255, 255, 255);
+  color: bisque;
 }
 
 #game-container {
