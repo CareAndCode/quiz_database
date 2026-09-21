@@ -37,7 +37,17 @@ getNewQuestion = () => {
 
     //Selects a random question from the array of available questions.
     const questionsIndex = Math.floor(Math.random() * availableQuestions.length);
-    currentQuestion = availableQuestions[questionsIndex];
+    const selectedQuestion = availableQuestions[questionsIndex];
+    const shuffledChoices = shuffleChoices(selectedQuestion);
+    currentQuestion = {
+        ...selectedQuestion,
+        answer: shuffledChoices.findIndex(choice => choice.isCorrect) + 1,
+    };
+
+    shuffledChoices.forEach((choice, index) => {
+        currentQuestion['choice' + (index + 1)] = choice.text;
+    });
+
     question.innerText = currentQuestion.question;
 
     //Populates choices with answer options.
@@ -51,6 +61,22 @@ getNewQuestion = () => {
 
     //Allows user ti select an answer.
     acceptingAnswers = true;
+};
+
+// Shuffle each question's answers while keeping track of the correct option.
+const shuffleChoices = selectedQuestion => {
+    const shuffledChoices = [1, 2, 3, 4].map(number => ({
+        text: selectedQuestion['choice' + number],
+        isCorrect: number === selectedQuestion.answer,
+    }));
+
+    for (let index = shuffledChoices.length - 1; index > 0; index--) {
+        const randomIndex = Math.floor(Math.random() * (index + 1));
+        [shuffledChoices[index], shuffledChoices[randomIndex]] =
+            [shuffledChoices[randomIndex], shuffledChoices[index]];
+    }
+
+    return shuffledChoices;
 };
 
 //Function to shuffle and get subset of questions.
