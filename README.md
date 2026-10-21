@@ -7,6 +7,7 @@ leaderboard.
 ## Features
 
 - A new randomized selection of up to 10 questions each game.
+- The option to play with questions from one selected category.
 - Four shuffled answer choices for every question.
 - Correct and incorrect answer feedback, including a reveal of the correct
   answer after each selection.
@@ -23,16 +24,17 @@ start a local static web server:
 python3 -m http.server 8000
 ```
 
-Then open [http://localhost:8000](http://localhost:8000) in your browser. Select
-**Begin Quiz** to play, enter a name at the end to save your score, or choose
-**Scores** from the home page to view the leaderboard.
+Then open [http://localhost:8000](http://localhost:8000) in your browser. Choose
+a category or leave **All categories** selected, then select **Begin Quiz** to
+play. Enter a name at the end to save your score, or choose **Scores** from the
+home page to view the leaderboard.
 
 You can also open `index.html` directly in a browser, though using a local
 server is recommended.
 
 ## How to play
 
-1. Start a quiz from the home page.
+1. Optionally choose a category on the home page, then start a quiz.
 2. Select one of the four answers for each question. Your selection is locked
    while the answer feedback is displayed.
 3. Earn 10 points for each correct answer. An incorrect selection does not
@@ -77,8 +79,8 @@ uses four choices and an `answer` value from `1` to `4`, indicating which
 }
 ```
 
-The category is stored with each question, but category selection is not
-currently part of the game.
+The category is stored with each question and used to populate the category
+selector on the home page.
 
 ## Score storage
 

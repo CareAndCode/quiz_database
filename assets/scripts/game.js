@@ -9,6 +9,7 @@ let acceptingAnswers = true;
 let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
+let totalQuestions = 0;
 
 //Constants for maximum number of points per correct answer and maximum number of questions per game.
 const SCORE_POINTS = 10;
@@ -18,14 +19,19 @@ const MAX_QUESTIONS = 10;
 startGame = () => {
     questionCounter = 0;
     score = 0;
-    availableQuestions = questionList(questions, MAX_QUESTIONS);
+    const selectedCategory = new URLSearchParams(window.location.search).get("category");
+    const categoryQuestions = selectedCategory
+        ? questions.filter(question => question.category === selectedCategory)
+        : questions;
+    availableQuestions = questionList(categoryQuestions, MAX_QUESTIONS);
+    totalQuestions = availableQuestions.length;
     getNewQuestion();
 };
 
 //Function to get a new question
 getNewQuestion = () => {
     //Checks if all questions have been answered
-    if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS){
+    if(availableQuestions.length === 0){
         localStorage.setItem('mostRecentScore', score);
 
         return window.location.assign('end.html');
@@ -33,7 +39,7 @@ getNewQuestion = () => {
 
     //Increments question counter and updates progress text.
     questionCounter++;
-    progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`;
+    progressText.innerText = `Question ${questionCounter} of ${totalQuestions}`;
 
     //Selects a random question from the array of available questions.
     const questionsIndex = Math.floor(Math.random() * availableQuestions.length);
