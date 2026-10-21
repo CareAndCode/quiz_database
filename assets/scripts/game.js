@@ -95,20 +95,24 @@ choices.forEach(choice => {
         acceptingAnswers = false;
         const selectedChoice = e.target;
         const selectedAnswer = selectedChoice.dataset.number;
+        const isCorrectAnswer = selectedAnswer == currentQuestion.answer;
 
-        let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
+        const classToApply = isCorrectAnswer ? 'correct' : 'incorrect';
+        const correctChoice = choices.find(choice => choice.dataset.number == currentQuestion.answer);
 
         // Increment score if the answer is correct.
-        if(classToApply === 'correct') {
+        if(isCorrectAnswer) {
             incrementScore(SCORE_POINTS);
         }
 
-        // Apply styling to the selected choice.
+        // Highlight the selected choice and reveal the correct answer.
         selectedChoice.parentElement.classList.add(classToApply);
+        correctChoice.parentElement.classList.add('correct');
 
         // Move to the next question after a delay.
         setTimeout(() => {
             selectedChoice.parentElement.classList.remove(classToApply);
+            correctChoice.parentElement.classList.remove('correct');
             getNewQuestion();
 
         }, 1000);
