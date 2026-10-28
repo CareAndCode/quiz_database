@@ -184,7 +184,7 @@
                 selectedChoice.parentElement.classList.remove(classToApply);
                 correctChoice.parentElement.classList.remove("correct");
                 getNewQuestion();
-            }, 1500);
+            }, 3800);
         });
     });
 
