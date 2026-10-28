@@ -13,6 +13,7 @@ leaderboard.
 - Correct and incorrect answer feedback, including a reveal of the correct
   answer after each selection.
 - 10 points for each correct answer.
+- Text-to-speech for the current question and all four answer choices.
 - A leaderboard that keeps the five highest scores in browser storage.
 - Responsive layout styled with Bootstrap.
 
@@ -56,9 +57,9 @@ server is recommended.
     │   └── style.css          # Site and game styles
     └── scripts/
         ├── questions.js       # Question bank
-        ├── game.js            # Question flow, answer feedback, and scoring
-        ├── end.js             # Final score and score saving
-        └── scores.js          # Leaderboard rendering
+        ├── home.js            # Home-page category selection
+        ├── game.js            # Quiz flow, answer feedback, speech, and scoring
+        └── scores.js          # Score saving and leaderboard rendering
 ```
 
 ## Adding questions

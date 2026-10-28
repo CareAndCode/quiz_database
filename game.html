@@ -34,7 +34,10 @@
                     <h1 id="score" class="hud-main-text text-center">0</h1>
                 </div>
             </div>
-            <h1 id="question" class="hud-prefix mb-2">What is the answer to the question?</h1>
+            <div class="question-row mb-2">
+                <h1 id="question" class="hud-prefix">What is the answer to the question?</h1>
+                <button type="button" id="speak-question" class="speech-button" aria-label="Read question and answers aloud" title="Read question and answers aloud">▶</button>
+            </div>
             <div class="choice-container mx-auto d-flex">
                 <p class="choice-prefix ps-2 pt-2">A</p>
                 <div class="choice-text pt-2 ps-4" data-number="1">Choice 1</div>
@@ -63,7 +66,6 @@
     <!-- Bootstrap JS end. -->
 
     <!-- Custom JS -->
-    <script src="assets/scripts/site.js"></script>
     <script src="assets/scripts/questions.js"></script>
     <script src="assets/scripts/game.js"></script>
     <!-- Custom JS end. -->

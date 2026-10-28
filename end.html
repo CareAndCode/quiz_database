@@ -28,10 +28,10 @@
         <h1 id="game-heading" class="mt-3 d-flex justify-content-center align-items-center">The Great Quiz Database Quiz <i class="fas fa-clapperboard"></i></h1>
         <div id="end" class="my-auto">
             <h1 id="final-score" class="d-flex justify-content-center">0</h1>
-            <form class="end-form-container d-flex flex-column">
+            <form id="score-form" class="end-form-container d-flex flex-column">
                 <h2 class="end-text">Enter your name below to save score!</h2>
                 <input type="text" name="name" id="username" placeholder="Enter your name" class="mb-3">
-                <button class="button" id="save-score" type="submit" onclick="saveHighScore(event)" disabled>Save <i class="fas fa-floppy-disk"></i></button>
+                <button class="button" id="save-score" type="submit" disabled>Save <i class="fas fa-floppy-disk"></i></button>
             </form>
             <a href="game.html" class="button mx-auto d-flex justify-content-center align-items-center">Play Again <i class="fas fa-gamepad"></i></a>
             <a href="index.html" class="button mx-auto d-flex justify-content-center align-items-center">Home <i class="fas fa-house"></i></a>
@@ -47,8 +47,7 @@
     <!-- Bootstrap JS end. -->
 
     <!-- Custom JS -->
-    <script src="assets/scripts/site.js"></script>
-    <script src="assets/scripts/end.js"></script>
+    <script src="assets/scripts/scores.js"></script>
     <!-- Custom JS end. -->
 </body>
 
